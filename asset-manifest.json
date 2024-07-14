@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/harsh9090/Harsh_mithaiwala_landing_page/static/css/main.7d4a6435.css",
+    "main.js": "/harsh9090/Harsh_mithaiwala_landing_page/static/js/main.305e702e.js",
+    "static/js/787.f3f5bdc6.chunk.js": "/harsh9090/Harsh_mithaiwala_landing_page/static/js/787.f3f5bdc6.chunk.js",
+    "static/media/Harsh_Mithaiwala_Resume.pdf": "/harsh9090/Harsh_mithaiwala_landing_page/static/media/Harsh_Mithaiwala_Resume.e861164bd34d20fcc5f4.pdf",
+    "static/media/ProfPic.jpg": "/harsh9090/Harsh_mithaiwala_landing_page/static/media/ProfPic.15b088fd00d34e024a5e.jpg",
+    "index.html": "/harsh9090/Harsh_mithaiwala_landing_page/index.html",
+    "main.7d4a6435.css.map": "/harsh9090/Harsh_mithaiwala_landing_page/static/css/main.7d4a6435.css.map",
+    "main.305e702e.js.map": "/harsh9090/Harsh_mithaiwala_landing_page/static/js/main.305e702e.js.map",
+    "787.f3f5bdc6.chunk.js.map": "/harsh9090/Harsh_mithaiwala_landing_page/static/js/787.f3f5bdc6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d4a6435.css",
+    "static/js/main.305e702e.js"
+  ]
+}
