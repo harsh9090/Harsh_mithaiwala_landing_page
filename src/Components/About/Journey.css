@@ -16,4 +16,18 @@
     color: var(--clr-primary);
   }
   
-  
+  .vertical-timeline-date {
+  background-color: transparent !important; /* Overwrite library's background */
+  box-shadow: none !important;              /* Remove any default shadow */
+  border: none !important;                  /* Remove default border, if any */
+  color: var(--clr-fg-alt);                 /* Adjust text color if needed */
+}
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+      position: absolute;
+      width: 100%;
+      left: 100%;
+      top: 6px;
+      font-size: 1rem;
+  }
+}

@@ -1,84 +1,140 @@
+/* Hero Container */
 .about {
   flex-direction: column;
-  margin-top: 3em;
+  margin-top: 6em; /* Leave space for sticky nav */
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh; /* So it looks like a full hero section */
 }
 
-.about__name {
-  color: var(--clr-primary);
+/* Subtle background shapes (bubbles) */
+.about::before,
+.about::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  filter: blur(80px);
+  opacity: 0.12;
+  z-index: 0;
+}
+.about::before {
+  top: -100px;
+  left: -100px;
+}
+.about::after {
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Main Heading */
+.mobileHead {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 .about__name2 {
   color: var(--clr-optional);
 }
-.about> :nth-child(2) {
-  margin-top: 1.2em;
-  font-size: 2rem;
-  line-height: 1.2;
-  color: var(--clr-fg-alt);
+
+.about__name {
+  /* Gradient text for 'Creative Lab' */
+  background: linear-gradient(45deg, #f6d365, #fda085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* Subheading (Typewriter) */
+.about__subtitle {
+  font-size: 1.6rem;
+  color: var(--clr-fg-alt);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Description */
 .about__desc {
   font-size: 1rem;
-  max-width: 70%;
+  max-width: 700px;
   text-align: center;
+  line-height: 1.6;
+  margin: 0 auto 2rem auto;
+  color: var(--clr-fg-alt);
+  position: relative;
+  z-index: 1;
 }
 
-.about__desc,
+/* Contact Icons */
 .about__contact {
-  margin-top: 2.4em;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
-.about .link--icon {
-  margin-right: 0.8em;
+.link--icon {
+  color: var(--clr-primary);
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.about .btn--outline {
-  margin-right: 1em;
+.link--icon:hover {
+  transform: scale(1.15);
+  color: var(--clr-optional);
 }
 
+/* Resume Button */
 .btnResume {
   color: var(--clr-primary);
   border: 2px solid var(--clr-primary);
   border-radius: 5px;
   height: 50px;
   cursor: pointer;
-  padding: 0px 25px;
-  margin-top: 10px;
-  padding-bottom: 5px;
+  padding: 0 25px;
+  font-weight: 600;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .btnResume:hover {
   background-color: var(--clr-primary);
   color: var(--clr-bg);
+  transform: translateY(-2px);
 }
 
 .resume-dwnld {
-  padding: 10px 0 0 0;
-
+  margin-left: 0.5rem;
+  vertical-align: middle;
 }
 
-
-
-@media all and (max-width: 1022px) and (min-width: 800px) {
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .mobileHead {
-    align-content: center;
+    font-size: 2.2rem;
   }
-
-  .app .about {
-    align-items: flex-start;
-    margin-top: 2em;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .about> :nth-child(2) {
-    font-size: 1.5rem;
+  .about__subtitle {
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 375px) {
   .mobileHead {
-    align-content: center;
+    font-size: 1.8rem;
     margin: auto;
     padding: 25px;
+  }
+  .about__subtitle {
+    font-size: 1.1rem;
   }
 }

@@ -3,12 +3,38 @@
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
   color: var(--clr-fg);
-  background-color: var(--clr-bg);
+  
+ background: linear-gradient(
+    -45deg,
+    #F0F8FF, /* Alice Blue */
+    #B0E0E6, /* Powder Blue */
+    #87CEFA, /* Light Sky Blue */
+    #1E90FF  /* Dodger Blue */
+  );
+
+  /* Make the gradient bigger than the container to allow movement */
+  background-size: 200% 200%;
+
+  /* Animate the background position over 10 seconds, infinitely */
+  animation: gradientBG 10s ease-in-out infinite;
 }
 
+/* Keyframes for horizontal (left-to-right) movement */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
 .light {
   --clr-bg: #fcfcfc;
   --clr-bg-alt: #fff;
+  --clr-bg-back:#1E90FF;
   --clr-fg: rgb(70, 60, 60);
   --clr-fg-alt: rgb(39, 39, 39);
   --clr-primary: #037540;

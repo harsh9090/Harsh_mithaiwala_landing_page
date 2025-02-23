@@ -5,6 +5,7 @@
 }
 
 .project {
+    background-color: var(--clr-bg);
     margin: 6% 0;
     box-shadow: var(--shadow);
     display: flex;
@@ -122,4 +123,15 @@
     .allProjects {
         grid-template-columns: repeat(1, 1fr);
     }
+}
+.project-image-container {
+  width: 100%;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.project-image-container img {
+  max-width: 100%;
+  object-fit: contain;
 }

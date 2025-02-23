@@ -5,23 +5,33 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIcon from "@material-ui/icons/Phone";
-import GetAppIcon from '@material-ui/icons/GetApp';
+import GetAppIcon from "@material-ui/icons/GetApp";
 import { Introduction } from "./Introduction";
-import resume from "../../assets/Harsh_Mithaiwala_Resume.pdf"
-
+import resume from "../../assets/Harsh_Mithaiwala_Resume.pdf";
 
 export const About = () => {
     return (
         <>
-            <div className="about center">
-                <h1 data-aos="fade-right" className="mobileHead">
-                    <span className="about__name2">Hola!</span>  Unveil My <span className="about__name">Creative Lab</span>
+            {/* Hero Section */}
+            <section className="about center" id="about">
+                {/* Title */}
+                <h1 data-aos="fade-right" className="mobileHead about__title">
+                    <span className="about__name2">Hola!</span> Unveil My{" "}
+                    <span className="about__name">Creative Lab</span>
                 </h1>
-                <Type />
-                <p className="about__desc" data-aos="fade-right">
-               An experienced Full Stack Developer specializing in the MERN stack and various programming languages. Enjoys crafting responsive UIs, building scalable back-end services, and integrating AI-driven features to enhance user experiences. Skilled in automation, user authentication, and Agile methodologies, thriving on solving complex problems and continuously learning new technologies. Excited to bring skills and passion for innovation to a dynamic and forward-thinking team.
+
+                {/* Typing / Subheading */}
+                <div data-aos="fade-right" className="about__subtitle">
+                    <Type />
+                </div>
+
+                {/* Description */}
+                <p className="about__desc" data-aos="fade-up">
+                    I'm a Full Stack Developer working mainly with the MERN stack and other programming languages. I enjoy building responsive UIs, creating scalable back-end services, and adding cool AI features to improve user experiences. I'm into automation, handling user authentication, and working in Agile teams. I love solving tricky problems and learning new things along the way. I'm excited to join a team that values innovation and collaboration.
                 </p>
-                <div className="about__contact center">
+
+                {/* Social Icons */}
+                <div className="about__contact center" data-aos="fade-up">
                     <a
                         href="https://github.com/harsh9090"
                         aria-label="github"
@@ -59,15 +69,19 @@ export const About = () => {
                         <LinkedInIcon />
                     </a>
                 </div>
-                <a href={resume} download>
-                <button className="btnResume">
-                    Resume <GetAppIcon className="resume-dwnld" />
-                </button>
-                </a>
-            </div>
-            
-            <Introduction />
 
+                {/* Resume Button */}
+                <div data-aos="fade-up">
+                    <a href={resume} download>
+                        <button className="btnResume">
+                            Resume <GetAppIcon className="resume-dwnld" />
+                        </button>
+                    </a>
+                </div>
+            </section>
+
+            {/* Introduction Section (below hero) */}
+            <Introduction />
         </>
     );
 };

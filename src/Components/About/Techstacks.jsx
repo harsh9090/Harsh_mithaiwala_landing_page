@@ -8,7 +8,8 @@ import {
      SiVisualstudiocode, SiOpenai,
     SiMaterialui,
     SiAzuredevops,
-    SiGnubash
+    SiGnubash,
+    SiSpringboot
 } from "react-icons/si";
 import { DiCss3 } from "react-icons/di";
 import { VscGithub } from "react-icons/vsc";
@@ -27,6 +28,8 @@ const techStacks = [
     // Backend
     { id: 12, category: "backend", icon: <SiMysql />, label: "MySQL" },
     { id: 13, category: "backend", icon: <SiNodedotjs />, label: "Node.js" },
+
+    { id: 40, category: "backend", icon: <SiSpringboot />, label: "Spring boot" },
     { id: 14, category: "backend", icon: <SiExpress />, label: "Express" },
     { id: 15, category: "backend", icon: <SiMongodb />, label: "MongoDB" },
     { id: 16, category: "backend", icon: <SiPython />, label: "Python" },
