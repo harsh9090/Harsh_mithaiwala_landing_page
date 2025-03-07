@@ -5,7 +5,7 @@
   padding: 3rem 2rem;
   position: relative;
   overflow: hidden;
-  min-height: 100vh; /* So it looks like a full hero section */
+  /* min-height: 100vh; So it looks like a full hero section */
 }
 
 /* Subtle background shapes (bubbles) */

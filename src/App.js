@@ -21,25 +21,6 @@ function App() {
   return (
     <div id="top" className={`${themename} app`}>
       {/* Animated Bubbles Background */}
-      <div className="background">
-        {/* 16 <span> elements for bubbles */}
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
 
       <section id="about">
         <Header />

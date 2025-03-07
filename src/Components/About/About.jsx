@@ -71,13 +71,13 @@ export const About = () => {
                 </div>
 
                 {/* Resume Button */}
-                <div data-aos="fade-up">
+                {/* <div data-aos="fade-up">
                     <a href={resume} download>
                         <button className="btnResume">
                             Resume <GetAppIcon className="resume-dwnld" />
                         </button>
                     </a>
-                </div>
+                </div> */}
             </section>
 
             {/* Introduction Section (below hero) */}
