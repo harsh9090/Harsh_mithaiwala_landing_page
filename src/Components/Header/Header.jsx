@@ -5,15 +5,26 @@ import "./Header.css";
 
 export const Header = () => {
   const [{ themename }] = React.useContext(ThemeContext);
-  const [headerClass, setHeaderClass] = useState("header center headerLight");
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [headerClass, setHeaderClass] = useState("header");
 
+  // Handle scroll effect
   useEffect(() => {
-    if (themename === "dark") {
-      setHeaderClass("header center headerDark");
-    } else {
-      setHeaderClass("header center headerLight");
-    }
-  }, [themename]);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Update header class based on theme and scroll
+  useEffect(() => {
+    let className = "header";
+    if (isScrolled) className += " header--scrolled";
+    if (themename === "dark") className += " header--dark";
+    setHeaderClass(className);
+  }, [themename, isScrolled]);
 
   return (
     <header className={headerClass}>
