@@ -1,29 +1,85 @@
 .footer {
-    text-align: center;
+  padding: 1.5rem 0;
+  text-align: center;
+  position: relative;
+    background: var(--clr-bg);
+    border-top: 2px solid var(--clr-primary);
   }
-  .newLight {
-    background-color: var(--clr-primary);
-    color:black;
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .footer p {
+    font-size: 1rem;
+    color: var(--clr-fg);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .heart-icon {
+    color: #ff4d4d;
+    font-size: 1.2rem;
+    animation: heartBeat 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 2px rgba(255, 77, 77, 0.3));
+  }
+  
+  @keyframes heartBeat {
+  
+    0%,
+    100% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+  
+    50% {
+      transform: scale(1.2);
+      filter: brightness(1.2);
+  }
+}
+
+.year {
+  margin-left: 0.5rem;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 1.2rem 0;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
+}
+.newLight {
+  background-color: var(--clr-primary);
+  color: black;
 }
 
 .newDark {
   background-color: var(--clr-primary);
 }
-  .footerBox{
-    /* border: 3px solid var(--clr-primary); */
-    width: 50%;
-    margin: auto;
-    padding-bottom: 20px;
-    border-radius: 15px;
-    background-color: transparent;
-    padding: 20px;
-    height: auto;
-  }
-  
-
-  
-  @media (max-width: 600px) {
-    .footerBox{
+.footerBox {
+  /* border: 3px solid var(--clr-primary); */
+  width: 50%;
+  margin: auto;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  background-color: transparent;
+  padding: 20px;
+  height: auto;
+}
+@media (max-width: 600px) {
+  .footerBox {
       width: 100%;
       border-radius: 0px;
       margin-bottom: 0px;

@@ -8,13 +8,12 @@ import "react-vertical-timeline-component/style.min.css";
 import SchoolIcon from "@material-ui/icons/School";
 import WorkIcon from "@material-ui/icons/Work";
 import StarRateIcon from "@material-ui/icons/StarRate";
-
+import CodeIcon from "@material-ui/icons/Code";
 import { ThemeContext } from "../../Context/theme";
 import "./Journey.css";
 
 export const Journey = () => {
   const [{ themename }] = React.useContext(ThemeContext);
-
   const [lineColor, setLineColor] = React.useState(
     themename === "light" ? "#23283e" : "#fcfcfc"
   );
@@ -27,104 +26,173 @@ export const Journey = () => {
     }
   }, [themename]);
 
-  // Shared style objects (DRY)
-  const commonContentStyle = {
-    boxShadow: "var(--shadow)",
-    border: "3px solid var(--clr-primary)",
-    backgroundColor: "var(--clr-bg)",
-    textAlign: "center",
-    color: "var(--clr-fg-alt)",
-  };
-
-  const commonArrowStyle = {
-    borderRight: "16px solid var(--clr-primary)",
-  };
-
-  const commonIconStyle = {
-    border: "3px solid var(--clr-primary)",
-    backgroundColor: "var(--clr-bg)",
-    color: "var(--clr-primary)",
-  };
-
-  // Timeline data
+  // Timeline data with enhanced structure
   const timelineData = [
     {
       date: "September 2023 - Present",
       icon: <WorkIcon />,
       title: "Full Stack Developer",
       subtitle: "AltQ Finance Services",
+      category: "work",
+      skills: ["Next.js", "Node.js", "MongoDB", "Auth0", "Material-UI"],
+      highlights: [
+        "Developed responsive financial dashboards",
+        "Implemented AI-driven authentication",
+        "Optimized backend performance",
+      ],
       description:
-        "I developed responsive UIs with Next.js and Material-UI. I optimized back-end services using Node.js, Express.js, and MongoDB for secure data transactions. A key feature I implemented was AI-driven user authentication with Auth0, enhancing security and user experience.",
+        "Leading full-stack development with a focus on fintech solutions. Building secure, scalable applications using modern technologies and best practices.",
     },
     {
       date: "September 2022 - Present",
       icon: <SchoolIcon />,
       title: "Master's Of Applied Computer Science",
       subtitle: "Concordia University",
+      category: "education",
+      skills: ["Cloud Computing", "Big Data", "Algorithms", "System Programming"],
+      highlights: [
+        "4.0 GPA Maintained",
+        "Research in Cloud Technologies",
+        "Advanced Algorithm Design",
+      ],
       description:
-        "Learned cloud computing, system programming, algorithms, networking, big data, and software testing. I completed various projects, applying these skills to real-world problems and exploring new technologies.",
+        "Pursuing advanced studies in computer science, specializing in cloud computing and distributed systems. Engaging in cutting-edge research and practical projects.",
     },
     {
       date: "July 2021 - August 2022",
       icon: <WorkIcon />,
       title: "Graduate Engineer Trainee",
       subtitle: "Nokia Solutions & Networks",
+      category: "work",
+      skills: ["Python", "Bash", "Network Configuration", "Cloud Services"],
+      highlights: [
+        "Automated network management tasks",
+        "Improved system efficiency by 40%",
+        "Implemented monitoring solutions",
+      ],
       description:
-        "I managed mobile networks, automated tasks with Bash and Python, and configured networks using Nokia Cloud Service. I troubleshot issues with Wireshark and Traceroute.",
+        "Managed mobile network infrastructure and developed automation solutions for network optimization and monitoring.",
     },
     {
       date: "July 2017 - June 2021",
       icon: <SchoolIcon />,
       title: "Computer Engineer",
       subtitle: "Sardar Vallabhbhai Patel Institute Of Technology",
+      category: "education",
+      skills: ["Blockchain", "Software Engineering", "Web Development"],
+      highlights: [
+        "First Class with Distinction",
+        "Blockchain Project Lead",
+        "Technical Committee Head",
+      ],
       description:
-        "Focused on computer engineering with a capstone project that developed a blockchain-based review system, enhancing transparency and trust in digital feedback through decentralized technology.",
+        "Completed bachelor's degree with focus on modern software development practices and emerging technologies.",
     },
     {
       date: "Sept 2020 - Oct 2020",
-      icon: <WorkIcon />,
+      icon: <CodeIcon />,
       title: "Front End Developer Intern",
       subtitle: "Supero Software",
+      category: "internship",
+      skills: ["Angular", "MaterializeCSS", "REST APIs", "JavaScript"],
+      highlights: [
+        "Built reusable UI components",
+        "Integrated dynamic content",
+        "Enhanced user experience",
+      ],
       description:
-        "Developed reusable UI components with Angular and MaterializeCSS, integrated REST APIs for dynamic content updates, and enhanced web app interactivity with JavaScript to boost user engagement and satisfaction.",
+        "Developed modern web interfaces and implemented responsive design patterns for enhanced user engagement.",
     },
     {
-      date: "April 2020 - June 2020",
-      icon: <WorkIcon />,
-      title: "Web Development intern",
-      subtitle: "Curiosum Tech. Ltd.",
+      date: "April 2020 - Sept 2020",
+      icon: <CodeIcon />,
+      title: "Web Developer Intern",
+      subtitle: "Curiosum Technologies",
+      category: "internship",
+      skills: ["Google Apps Script", "JavaScript", "Event-Driven Architecture", "Pub/Sub Pattern"],
+      highlights: [
+        "Automated data processing with Google Apps Script",
+        "Built event-driven systems with pub/sub pattern",
+      ],
       description:
-        "Developed automation scripts with Google App Script for task streamlining, created event-driven and push-subscribe scripts for real-time updates in Google Apps, enhancing user interaction and process efficiency.",
+        "Automated workflows using Google Apps Script and implemented event-driven architecture to improve efficiency.",
     },
   ];
 
+  const commonStyles = {
+    contentStyle: {
+      background: 'transparent',
+      // border: '2px solid var(--clr-primary)',
+      borderRadius: '16px',
+      boxShadow: 'var(--shadow)',
+      paddingTop: '-2rem',
+      // padding: '2rem',
+    },
+    contentArrowStyle: {
+      borderRight: '10px solid var(--clr-primary)',
+    },
+    iconStyle: {
+      background: 'var(--clr-bg)',
+      border: '3px solid var(--clr-primary)',
+      boxShadow: 'var(--shadow)',
+      color: 'var(--clr-primary)',
+    },
+  };
+
   return (
-    <div className="section mainsection">
-      <h2 className="section__title" data-aos="fade-right">
-        My <span className="different">Journey</span>
-      </h2>
+    <section className="journey-section section">
+      <div className="section-header" data-aos="fade-down">
+        <h2 className="section__title">
+          My Professional <span className="different">Journey</span>
+        </h2>
+        <p className="section__subtitle">
+          A timeline of my professional growth and achievements
+        </p>
+      </div>
+
       <VerticalTimeline lineColor={lineColor}>
         {timelineData.map((item, idx) => (
           <VerticalTimelineElement
             key={idx}
             date={item.date}
-            contentStyle={commonContentStyle}
-            contentArrowStyle={commonArrowStyle}
-            iconStyle={commonIconStyle}
-            dateClassName="vertical-timeline-date"
+            dateClassName="timeline-date"
+            contentStyle={commonStyles.contentStyle}
+            contentArrowStyle={commonStyles.contentArrowStyle}
+            iconStyle={commonStyles.iconStyle}
             icon={item.icon}
           >
-            <h3 className="vertical-timeline-element-title" data-aos="fade-right">
-              {item.title}
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle" data-aos="fade-right">
-              {item.subtitle}
-            </h4>
-            <p data-aos="fade-right">{item.description}</p>
+            <div className={`timeline-content ${item.category}`}>
+              <div className="timeline-header">
+                <h3 className="timeline-title">{item.title}</h3>
+                <h4 className="timeline-subtitle">{item.subtitle}</h4>
+              </div>
+
+              <p className="timeline-description">{item.description}</p>
+
+              <div className="timeline-highlights">
+                {item.highlights.map((highlight, i) => (
+                  <div key={i} className="highlight-item">
+                    <span className="highlight-bullet">▹</span>
+                    {highlight}
+                  </div>
+                ))}
+              </div>
+
+              <div className="timeline-skills">
+                {item.skills.map((skill, i) => (
+                  <span key={i} className="skill-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </VerticalTimelineElement>
         ))}
-        <VerticalTimelineElement icon={<StarRateIcon />} iconStyle={commonIconStyle} />
+        <VerticalTimelineElement
+          iconStyle={commonStyles.iconStyle}
+          icon={<StarRateIcon />}
+        />
       </VerticalTimeline>
-    </div>
+    </section>
   );
 };

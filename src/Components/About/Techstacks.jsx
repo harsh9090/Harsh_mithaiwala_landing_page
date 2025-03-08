@@ -1,91 +1,152 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Techstacks.css";
-import { FaReact, FaAngular, FaAws, FaCloud } from "react-icons/fa";
+import { FaReact, FaAngular, FaAws, FaGitAlt, FaLinux, FaBrain, FaCode, FaDatabase, FaTools, FaRocket } from "react-icons/fa";
 import {
-    SiRedux, SiHtml5, SiNodedotjs, SiPostman, SiExpress, SiMongodb, SiAndroidstudio,
+    SiRedux, SiHtml5, SiNodedotjs, SiPostman, SiExpress, SiMongodb,
     SiJavascript, SiMysql, SiPython, SiJava, SiTypescript,
-    SiDocker, SiKubernetes, SiHeroku, SiFirebase,
-     SiVisualstudiocode, SiOpenai,
-    SiMaterialui,
-    SiAzuredevops,
-    SiGnubash,
-    SiSpringboot
+    SiDocker, SiKubernetes, SiFirebase, SiMaterialui, SiSpringboot,
+    SiTailwindcss, SiPostgresql, SiAuth0, SiGooglecloud,
+    SiNextdotjs, SiTensorflow, SiPytorch, SiJenkins
 } from "react-icons/si";
-import { DiCss3 } from "react-icons/di";
-import { VscGithub } from "react-icons/vsc";
-import { BsBootstrap } from "react-icons/bs";
+import { DiCss3, DiScrum } from "react-icons/di";
+import { BsGearFill, BsLightningChargeFill } from "react-icons/bs";
 
-const techStacks = [
-    
-    { id: 3, category: "frontend", icon: <SiJavascript />, label: "JavaScript" },
-    { id: 4, category: "frontend", icon: <FaReact />, label: "React" },
-    { id: 6, category: "frontend", icon: <SiRedux />, label: "Redux" },
-    { id: 7, category: "frontend", icon: <FaAngular />, label: "Angular" },
-    { id: 8, category: "frontend", icon: <BsBootstrap />, label: "Bootstrap" },
-    { id: 9, category: "frontend", icon: <SiMaterialui />, label: "Material-UI" },
-{ id: 1, category: "frontend", icon: <SiHtml5 />, label: "HTML" },
-    { id: 2, category: "frontend", icon: <DiCss3 />, label: "CSS" },
-    // Backend
-    { id: 12, category: "backend", icon: <SiMysql />, label: "MySQL" },
-    { id: 13, category: "backend", icon: <SiNodedotjs />, label: "Node.js" },
+const skillStats = {
+    totalYears: 3,
+    expertSkills: 8,
+    projectsCompleted: 10,
+    technologies: 25
+};
 
-    { id: 40, category: "backend", icon: <SiSpringboot />, label: "Spring boot" },
-    { id: 14, category: "backend", icon: <SiExpress />, label: "Express" },
-    { id: 15, category: "backend", icon: <SiMongodb />, label: "MongoDB" },
-    { id: 16, category: "backend", icon: <SiPython />, label: "Python" },
-    { id: 17, category: "backend", icon: <SiJava />, label: "Java" },
-    { id: 18, category: "backend", icon: <SiTypescript />, label: "TypeScript" },
+const categoryIcons = {
+    "Frontend & UI": <FaCode />,
+    "Backend & APIs": <FaRocket />,
+    "Data & Cloud": <FaDatabase />,
+    "DevOps & Tools": <FaTools />,
+    "AI & ML": <FaBrain />
+};
 
-    // DevOps & Cloud
-    { id: 19, category: "devops", icon: <SiDocker />, label: "Docker" },
-    { id: 20, category: "devops", icon: <SiKubernetes />, label: "Kubernetes" },
-    { id: 21, category: "devops", icon: <SiAzuredevops />, label: "Azure" },
-    { id: 22, category: "devops", icon: <SiHeroku />, label: "Heroku" },
-{ id: 37, category: "devops", icon: <FaAws />, label: "AWS" },
-    { id: 38, category: "devops", icon: <FaCloud />, label: "Cloud Services" },
-    // Tools & Other
-    { id: 26, category: "tools", icon: <VscGithub />, label: "GitHub" },
-    { id: 28, category: "tools", icon: <SiPostman />, label: "Postman" },
-    { id: 30, category: "tools", icon: <SiGnubash />, label: "Bash" },
-    { id: 31, category: "tools", icon: <SiFirebase />, label: "Firebase" },
-    { id: 32, category: "tools", icon: <SiVisualstudiocode />, label: "VS Code" },
-
-    // Other
-    { id: 33, category: "other", icon: <SiAndroidstudio />, label: "Android Studio" },
-    { id: 39, category: "other", icon: <SiOpenai />, label: "OpenAI" }
+const skillCategories = [
+    {
+        title: "Frontend & UI",
+        skills: [
+            { icon: <SiJavascript />, name: "JavaScript", level: "Expert" },
+            { icon: <FaReact />, name: "React", level: "Expert" },
+            { icon: <SiNextdotjs />, name: "Next.js", level: "Advanced" },
+            { icon: <SiRedux />, name: "Redux", level: "Advanced" },
+            { icon: <FaAngular />, name: "Angular", level: "Advanced" },
+            { icon: <SiHtml5 />, name: "HTML5", level: "Expert" },
+            { icon: <DiCss3 />, name: "CSS3", level: "Expert" },
+            { icon: <SiMaterialui />, name: "MUI", level: "Advanced" },
+            { icon: <SiTailwindcss />, name: "Tailwind", level: "Advanced" },
+        ]
+    },
+    {
+        title: "Backend & APIs",
+        skills: [
+            { icon: <SiNodedotjs />, name: "Node.js", level: "Expert" },
+            { icon: <SiExpress />, name: "Express", level: "Advanced" },
+            { icon: <SiSpringboot />, name: "Spring", level: "Advanced" },
+            { icon: <SiJava />, name: "Java", level: "Advanced" },
+            { icon: <SiPython />, name: "Python", level: "Advanced" },
+            { icon: <SiTypescript />, name: "TypeScript", level: "Advanced" },
+            { icon: <SiAuth0 />, name: "Auth0", level: "Advanced" },
+        ]
+    },
+    {
+        title: "Data & Cloud",
+        skills: [
+            { icon: <SiMysql />, name: "MySQL", level: "Advanced" },
+            { icon: <SiMongodb />, name: "MongoDB", level: "Advanced" },
+            { icon: <SiPostgresql />, name: "PostgreSQL", level: "Advanced" },
+            { icon: <SiFirebase />, name: "Firebase", level: "Advanced" },
+            { icon: <FaAws />, name: "AWS", level: "Intermediate" },
+            { icon: <SiGooglecloud />, name: "GCP", level: "Intermediate" },
+        ]
+    },
+    {
+        title: "DevOps & Tools",
+        skills: [
+            { icon: <SiDocker />, name: "Docker", level: "Advanced" },
+            { icon: <SiKubernetes />, name: "K8s", level: "Intermediate" },
+            { icon: <SiJenkins />, name: "Jenkins", level: "Intermediate" },
+            { icon: <FaGitAlt />, name: "Git", level: "Expert" },
+            { icon: <FaLinux />, name: "Linux", level: "Advanced" },
+            { icon: <SiPostman />, name: "Postman", level: "Expert" },
+        ]
+    },
+    {
+        title: "AI & ML",
+        skills: [
+            { icon: <SiTensorflow />, name: "TensorFlow", level: "Intermediate" },
+            { icon: <SiPytorch />, name: "PyTorch", level: "Intermediate" },
+            { icon: <BsGearFill />, name: "ML Models", level: "Intermediate" },
+            { icon: <DiScrum />, name: "Agile", level: "Advanced" },
+        ]
+    }
 ];
 
-
 export const Techstacks = () => {
-    const [filter, setFilter] = useState("all");
-
-    const handleFilterChange = (category) => {
-        setFilter(category);
-    };
-
-    const filteredTechStacks = techStacks.filter((tech) =>
-        filter === "all" ? true : tech.category === filter
-    );
-
     return (
-        <div className="section main" data-aos="fade-right">
-            <h2 className="section__title different">TECH STACKS</h2>
-            <div className="button-group">
-                <button className="filter-button" onClick={() => handleFilterChange("all")}>All</button>
-                <button className="filter-button" onClick={() => handleFilterChange("frontend")}>Frontend</button>
-                <button className="filter-button" onClick={() => handleFilterChange("backend")}>Backend</button>
-                <button className="filter-button" onClick={() => handleFilterChange("devops")}>DevOps</button>
-                <button className="filter-button" onClick={() => handleFilterChange("tools")}>Tools</button>
-                <button className="filter-button" onClick={() => handleFilterChange("other")}>Other</button>
+        <section className="techstacks-section" data-aos="fade-up">
+            <div className="skills-header">
+                <h2 className="section__title">
+                    Technical <span className="highlight">Arsenal</span>
+                </h2>
+                <p className="section__subtitle">
+                    Crafting digital experiences with modern technologies
+                </p>
+
+                <div className="skill-stats">
+                    <div className="stat-item">
+                        <BsLightningChargeFill className="stat-icon" />
+                        <div className="stat-info">
+                            <span className="stat-number">{skillStats.expertSkills}</span>
+                            <span className="stat-label">Expert Skills</span>
+                        </div>
+                    </div>
+                    <div className="stat-item">
+                        <FaCode className="stat-icon" />
+                        <div className="stat-info">
+                            <span className="stat-number">{skillStats.technologies}+</span>
+                            <span className="stat-label">Technologies</span>
+                        </div>
+                    </div>
+                    <div className="stat-item">
+                        <FaRocket className="stat-icon" />
+                        <div className="stat-info">
+                            <span className="stat-number">{skillStats.projectsCompleted}+</span>
+                            <span className="stat-label">Projects</span>
+                        </div>
+                    </div>
+                    <div className="stat-item">
+                        <FaBrain className="stat-icon" />
+                        <div className="stat-info">
+                            <span className="stat-number">{skillStats.totalYears}+</span>
+                            <span className="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="techsection">
-                {filteredTechStacks.map((tech) => (
-                    <div key={tech.id} className="tech-item">
-                        {tech.icon}
-                        <h5>{tech.label}</h5>
+
+            <div className="skills-container">
+                {skillCategories.map((category, index) => (
+                    <div key={index} className="skill-category">
+                        <h3 className="category-title">
+                            <span className="category-icon">{categoryIcons[category.title]}</span>
+                            {category.title}
+                        </h3>
+                        <div className="skills-grid">
+                            {category.skills.map((skill, skillIndex) => (
+                                <div key={skillIndex} className="skill-item" data-level={skill.level}>
+                                    <div className="skill-icon">{skill.icon}</div>
+                                    <span className="skill-name">{skill.name}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };

@@ -3,32 +3,76 @@
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
   color: var(--clr-fg);
-  background-color: var(--clr-bg);
-    transition: background-color 0.3s ease;
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  /* background-color: var(--clr-bg); */
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+      linear-gradient(120deg, 
+          rgba(var(--clr-primary-rgb), 0.07) 0%, 
+          rgba(var(--clr-accent-rgb), 0.07) 50%,
+          rgba(var(--clr-optional-rgb), 0.07) 100%),
+      radial-gradient(circle at 0% 0%, rgba(var(--clr-primary-rgb), 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(var(--clr-optional-rgb), 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 100% 0%, rgba(var(--clr-accent-rgb), 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(var(--clr-primary-rgb), 0.08) 0%, transparent 40%);
+  z-index: -1;
+}
+
+.app::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='currentColor' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .light {
-  --clr-bg: #fcfcfc;
-  --clr-bg-alt: #fff;
-  --clr-bg-back:#1E90FF;
-  --clr-fg: rgb(70, 60, 60);
-  --clr-fg-alt: rgb(39, 39, 39);
-  --clr-primary: #037540;
-  --clr-optional: #e5880f;
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --clr-bg: #f8fafc;
+    --clr-bg-alt: #f1f5f9;
+    --clr-bg-back: #e2e8f0;
+    --clr-fg: #212529;
+    --clr-fg-alt: #343a40;
+    --clr-primary: #0d6efd;
+    --clr-primary-rgb: 13, 110, 253;
+    --clr-primary-light: rgba(13, 110, 253, 0.15);
+    --clr-optional: #fd7e14;
+    --clr-optional-rgb: 253, 126, 20;
+    --clr-optional-light: rgba(253, 126, 20, 0.15);
+    --clr-accent: #20c997;
+    --clr-accent-rgb: 32, 201, 151;
+    --clr-card: rgba(255, 255, 255, 0.8);
+    --shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+    --gradient-primary: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+    --gradient-optional: linear-gradient(135deg, #fd7e14 0%, #ffc107 100%);
 }
 
-
-
 .dark {
-  --clr-bg: #0f0f0f;
-  --clr-bg-alt: #380b5e;
-  --clr-fg: #ded9df;
-  --clr-fg-alt: #d6d6fa;
-  --clr-primary: #837082;
- --clr-optional: #6a0572;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --clr-bg: #0a0a0a;
+    --clr-bg-alt: #1a1a1a;
+    --clr-bg-back: #121212;
+    --clr-fg: #f8f9fa;
+    --clr-fg-alt: #e9ecef;
+    --clr-primary: #60a5fa;
+    --clr-primary-rgb: 96, 165, 250;
+    --clr-primary-light: rgb(9, 53, 105);
+    --clr-optional: #fbbf24;
+    --clr-optional-rgb: 251, 191, 36;
+    --clr-optional-light: rgba(251, 191, 36, 0.15);
+    --clr-accent: #34d399;
+    --clr-accent-rgb: 52, 211, 153;
+    --clr-card: rgba(26, 26, 26, 0.95);
+    --shadow: rgba(0, 0, 0, 0.25) 0px 8px 24px;
+    --gradient-primary: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+    --gradient-optional: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
 }
 
 main {
