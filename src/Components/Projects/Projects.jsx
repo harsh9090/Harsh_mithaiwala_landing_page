@@ -38,7 +38,6 @@ const projectsData = [
             { icon: <SiJava />, name: "Java" }
         ],
         liveLink: "https://expense-tracker-frontend-tool.netlify.app/",
-        codeLink: "https://github.com/yourusername/expense-tracker"
     },
     {
         title: "Live Posts",
@@ -58,8 +57,7 @@ const projectsData = [
             { icon: <FaAngular />, name: "Angular" },
             { icon: <FaNodeJs />, name: "Node.js" }
         ],
-        liveLink: "https://live-posts-dce78.web.app/home",
-        codeLink: "https://github.com/yourusername/live-posts"
+        liveLink: "https://live-posts-dce78.web.app/home"
     },
     {
         title: "RainSense AI",
