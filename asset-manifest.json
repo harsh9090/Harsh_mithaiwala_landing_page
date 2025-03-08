@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.29bbf5e5.css",
-    "main.js": "/static/js/main.66d64f9b.js",
-    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/Harsh_Mithaiwala_Resume.pdf": "/static/media/Harsh_Mithaiwala_Resume.d46929b23ae44d940c54.pdf",
-    "static/media/ProfPic.jpg": "/static/media/ProfPic.15b088fd00d34e024a5e.jpg",
-    "index.html": "/index.html",
-    "main.29bbf5e5.css.map": "/static/css/main.29bbf5e5.css.map",
-    "main.66d64f9b.js.map": "/static/js/main.66d64f9b.js.map",
-    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+    "main.css": "/Harsh_mithaiwala_landing_page/static/css/main.29bbf5e5.css",
+    "main.js": "/Harsh_mithaiwala_landing_page/static/js/main.863a1a96.js",
+    "static/js/787.1ed0c42c.chunk.js": "/Harsh_mithaiwala_landing_page/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Harsh_Mithaiwala_Resume.pdf": "/Harsh_mithaiwala_landing_page/static/media/Harsh_Mithaiwala_Resume.d46929b23ae44d940c54.pdf",
+    "static/media/ProfPic.jpg": "/Harsh_mithaiwala_landing_page/static/media/ProfPic.15b088fd00d34e024a5e.jpg",
+    "index.html": "/Harsh_mithaiwala_landing_page/index.html",
+    "main.29bbf5e5.css.map": "/Harsh_mithaiwala_landing_page/static/css/main.29bbf5e5.css.map",
+    "main.863a1a96.js.map": "/Harsh_mithaiwala_landing_page/static/js/main.863a1a96.js.map",
+    "787.1ed0c42c.chunk.js.map": "/Harsh_mithaiwala_landing_page/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.29bbf5e5.css",
-    "static/js/main.66d64f9b.js"
+    "static/js/main.863a1a96.js"
   ]
 }
