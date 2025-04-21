@@ -4,11 +4,8 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
-import SchoolIcon from "@material-ui/icons/School";
 import WorkIcon from "@material-ui/icons/Work";
-import StarRateIcon from "@material-ui/icons/StarRate";
-import CodeIcon from "@material-ui/icons/Code";
+import SchoolIcon from "@material-ui/icons/School";
 import { ThemeContext } from "../../Context/theme";
 import "./Journey.css";
 
@@ -26,7 +23,6 @@ export const Journey = () => {
     }
   }, [themename]);
 
-  // Timeline data with enhanced structure
   const timelineData = [
     {
       date: "September 2023 - Present",
@@ -34,29 +30,29 @@ export const Journey = () => {
       title: "Full Stack Developer",
       subtitle: "AltQ Finance Services",
       category: "work",
-      skills: ["Next.js", "Node.js", "MongoDB", "Auth0", "Material-UI"],
-      highlights: [
-        "Developed responsive financial dashboards",
-        "Implemented AI-driven authentication",
-        "Optimized backend performance",
-      ],
       description:
-        "Leading full-stack development with a focus on fintech solutions. Building secure, scalable applications using modern technologies and best practices.",
+        "Driving end-to-end full-stack development for complex fintech applications, focusing on building high-performance, secure, and scalable solutions in a fast-paced environment.",
+      responsibilities: [
+        "Leading the design and development of robust, responsive financial dashboards that empower data-driven decision-making.",
+        "Architecting and integrating AI-powered authentication mechanisms to enhance security and user experience.",
+        "Optimizing backend services, ensuring high availability, fault tolerance, and seamless scalability across global infrastructure.",
+      ],
+      technologies: ["frontend", "backend", "database", "cloud", "devops", "AI", "mobile app"],
     },
     {
       date: "September 2022 - Present",
       icon: <SchoolIcon />,
-      title: "Master's Of Applied Computer Science",
+      title: "Master's of Applied Computer Science",
       subtitle: "Concordia University",
       category: "education",
-      skills: ["Cloud Computing", "Big Data", "Algorithms", "System Programming"],
-      highlights: [
-        "4.0 GPA Maintained",
-        "Research in Cloud Technologies",
-        "Advanced Algorithm Design",
-      ],
       description:
-        "Pursuing advanced studies in computer science, specializing in cloud computing and distributed systems. Engaging in cutting-edge research and practical projects.",
+        "Pursuing advanced studies in computer science with a focus on cloud computing, distributed systems, and algorithm optimization to solve complex, real-world problems.",
+      achievements: [
+        "Maintaining a perfect 4.0 GPA while balancing demanding coursework and independent research projects.",
+        "Conducting cutting-edge research on cloud-native architectures, distributed data processing, and the scalability of microservices.",
+        "Deepening expertise in advanced system design, algorithms, and high-performance computing through specialized coursework.",
+      ],
+      specializations: ["Cloud Computing", "Distributed Systems", "Advanced Algorithms", "Software Engineering", "Web Development"],
     },
     {
       date: "July 2021 - August 2022",
@@ -64,90 +60,56 @@ export const Journey = () => {
       title: "Graduate Engineer Trainee",
       subtitle: "Nokia Solutions & Networks",
       category: "work",
-      skills: ["Python", "Bash", "Network Configuration", "Cloud Services"],
-      highlights: [
-        "Automated network management tasks",
-        "Improved system efficiency by 40%",
-        "Implemented monitoring solutions",
-      ],
       description:
-        "Managed mobile network infrastructure and developed automation solutions for network optimization and monitoring.",
+        "Developed automation solutions and optimized network infrastructure for mobile networks, delivering enhanced system performance and reliability in large-scale telecom environments.",
+      responsibilities: [
+        "Designed and implemented scalable automation frameworks for network monitoring and management, reducing manual intervention and error rates.",
+        "Led efforts to streamline network operations, resulting in a 40% improvement in system efficiency and uptime.",
+        "Developed and deployed comprehensive monitoring solutions to proactively identify and mitigate potential issues across the network infrastructure.",
+      ],
+      technologies: [ "Docker", "Kubernetes", "Python", "Shell Scripting", "Network Protocols", "Cloud Services"],
     },
     {
       date: "July 2017 - June 2021",
       icon: <SchoolIcon />,
-      title: "Computer Engineer",
-      subtitle: "Sardar Vallabhbhai Patel Institute Of Technology",
+      title: "Bachelor's in Computer Engineering",
+      subtitle: "Sardar Vallabhbhai Patel Institute of Technology",
       category: "education",
-      skills: ["Blockchain", "Software Engineering", "Web Development"],
-      highlights: [
-        "First Class with Distinction",
-        "Blockchain Project Lead",
-        "Technical Committee Head",
-      ],
       description:
-        "Completed bachelor's degree with focus on modern software development practices and emerging technologies.",
-    },
-    {
-      date: "Sept 2020 - Oct 2020",
-      icon: <CodeIcon />,
-      title: "Front End Developer Intern",
-      subtitle: "Supero Software",
-      category: "internship",
-      skills: ["Angular", "MaterializeCSS", "REST APIs", "JavaScript"],
-      highlights: [
-        "Built reusable UI components",
-        "Integrated dynamic content",
-        "Enhanced user experience",
+        "Graduated with a focus on software engineering principles, modern development practices, and the latest trends in emerging technologies like blockchain and web development.",
+      achievements: [
+        "Graduated with First Class Honors, securing distinction for academic excellence and project leadership.",
+        "Led a multi-disciplinary blockchain research project aimed at exploring real-world applications for decentralized systems.",
+        "Served as Technical Committee Head, organizing workshops and fostering a collaborative environment for fellow students.",
       ],
-      description:
-        "Developed modern web interfaces and implemented responsive design patterns for enhanced user engagement.",
-    },
-    {
-      date: "April 2020 - Sept 2020",
-      icon: <CodeIcon />,
-      title: "Web Developer Intern",
-      subtitle: "Curiosum Technologies",
-      category: "internship",
-      skills: ["Google Apps Script", "JavaScript", "Event-Driven Architecture", "Pub/Sub Pattern"],
-      highlights: [
-        "Automated data processing with Google Apps Script",
-        "Built event-driven systems with pub/sub pattern",
-      ],
-      description:
-        "Automated workflows using Google Apps Script and implemented event-driven architecture to improve efficiency.",
+      specializations: ["Software Engineering", "Blockchain Technology", "Web Development"],
     },
   ];
 
+
   const commonStyles = {
     contentStyle: {
-      background: 'transparent',
-      // border: '2px solid var(--clr-primary)',
-      borderRadius: '16px',
-      boxShadow: 'var(--shadow)',
-      paddingTop: '-2rem',
-      // padding: '2rem',
+      background: 'var(--clr-bg)',
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+      borderRadius: '8px',
+      border: '1px solid rgba(var(--clr-primary-rgb), 0.1)',
+      padding: '1.5rem',
     },
     contentArrowStyle: {
-      borderRight: '10px solid var(--clr-primary)',
+      borderRight: '7px solid var(--clr-bg)',
     },
     iconStyle: {
       background: 'var(--clr-bg)',
-      border: '3px solid var(--clr-primary)',
-      boxShadow: 'var(--shadow)',
+      boxShadow: '0 0 0 3px var(--clr-primary)',
       color: 'var(--clr-primary)',
     },
   };
 
   return (
-    <section className="journey-section section">
-      <div className="section-header" data-aos="fade-down">
-        <h2 className="section__title">
-          My Professional <span className="different">Journey</span>
-        </h2>
-        <p className="section__subtitle">
-          A timeline of my professional growth and achievements
-        </p>
+    <section id="journey" className="journey-section">
+      <div className="section-header">
+        <h2 className="section__title">Professional Journey</h2>
+        <p className="section__subtitle">Career Milestones and Academic Achievements</p>
       </div>
 
       <VerticalTimeline lineColor={lineColor}>
@@ -156,42 +118,44 @@ export const Journey = () => {
             key={idx}
             date={item.date}
             dateClassName="timeline-date"
-            contentStyle={commonStyles.contentStyle}
-            contentArrowStyle={commonStyles.contentArrowStyle}
-            iconStyle={commonStyles.iconStyle}
+            {...commonStyles}
             icon={item.icon}
           >
             <div className={`timeline-content ${item.category}`}>
-              <div className="timeline-header">
-                <h3 className="timeline-title">{item.title}</h3>
-                <h4 className="timeline-subtitle">{item.subtitle}</h4>
-              </div>
-
+              <h3 className="timeline-title">{item.title}</h3>
+              <h4 className="timeline-subtitle">{item.subtitle}</h4>
               <p className="timeline-description">{item.description}</p>
 
-              <div className="timeline-highlights">
-                {item.highlights.map((highlight, i) => (
-                  <div key={i} className="highlight-item">
-                    <span className="highlight-bullet">▹</span>
-                    {highlight}
-                  </div>
-                ))}
-              </div>
+              {item.responsibilities && (
+                <div className="timeline-details">
+                  <h5>Key Responsibilities:</h5>
+                  <ul>
+                    {item.responsibilities.map((resp, i) => (
+                      <li key={i}>{resp}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-              <div className="timeline-skills">
-                {item.skills.map((skill, i) => (
-                  <span key={i} className="skill-tag">
-                    {skill}
-                  </span>
+              {item.achievements && (
+                <div className="timeline-details">
+                  <h5>Achievements:</h5>
+                  <ul>
+                    {item.achievements.map((achievement, i) => (
+                      <li key={i}>{achievement}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="timeline-tags">
+                {(item.technologies || item.specializations)?.map((tech, i) => (
+                  <span key={i} className="tag">{tech}</span>
                 ))}
               </div>
             </div>
           </VerticalTimelineElement>
         ))}
-        <VerticalTimelineElement
-          iconStyle={commonStyles.iconStyle}
-          icon={<StarRateIcon />}
-        />
       </VerticalTimeline>
     </section>
   );
