@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Harsh_mithaiwala_landing_page/static/css/main.0c5e63af.css",
-    "main.js": "/Harsh_mithaiwala_landing_page/static/js/main.8ebf1a5b.js",
+    "main.css": "/Harsh_mithaiwala_landing_page/static/css/main.02ff7429.css",
+    "main.js": "/Harsh_mithaiwala_landing_page/static/js/main.cacaa103.js",
     "static/js/787.1ed0c42c.chunk.js": "/Harsh_mithaiwala_landing_page/static/js/787.1ed0c42c.chunk.js",
     "static/media/ProfPic.jpg": "/Harsh_mithaiwala_landing_page/static/media/ProfPic.15b088fd00d34e024a5e.jpg",
     "index.html": "/Harsh_mithaiwala_landing_page/index.html",
-    "main.0c5e63af.css.map": "/Harsh_mithaiwala_landing_page/static/css/main.0c5e63af.css.map",
-    "main.8ebf1a5b.js.map": "/Harsh_mithaiwala_landing_page/static/js/main.8ebf1a5b.js.map",
+    "main.02ff7429.css.map": "/Harsh_mithaiwala_landing_page/static/css/main.02ff7429.css.map",
+    "main.cacaa103.js.map": "/Harsh_mithaiwala_landing_page/static/js/main.cacaa103.js.map",
     "787.1ed0c42c.chunk.js.map": "/Harsh_mithaiwala_landing_page/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c5e63af.css",
-    "static/js/main.8ebf1a5b.js"
+    "static/css/main.02ff7429.css",
+    "static/js/main.cacaa103.js"
   ]
 }
