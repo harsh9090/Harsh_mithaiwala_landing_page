@@ -22,16 +22,13 @@ function App() {
     <div id="top" className={`${themename} app`}>
       {/* Animated Bubbles Background */}
 
-      <section id="about">
+      <section id="home">
         <Header />
       </section>
 
       <main>
-        <br />
-        <br />
-        <br />
-        <br />
-        <About id="home" />
+        
+        <About id="about" />
         <br />
         <br />
         <section id="journey" style={{ paddingTop: "40px" }}>

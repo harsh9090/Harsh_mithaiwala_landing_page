@@ -25,6 +25,22 @@ export const Journey = () => {
 
   const timelineData = [
     {
+      date: "July 2025 - Present",
+      icon: <WorkIcon />,
+      title: "Full Stack Developer",
+      subtitle: "Skate Canada",
+      category: "work",
+      description:
+        "Developing and maintaining Skate Canada's internal scoring platform, delivering secure, high-performance, and scalable solutions for real-time competition scoring and analytics.",
+      responsibilities: [
+        "Designing and implementing responsive frontend interfaces for judges, referees, and administrators to manage live scoring efficiently.",
+        "Building and optimizing backend services with real-time communication via WebSockets for instant score updates and notifications.",
+        "Managing cloud infrastructure and database systems to ensure high availability, fault tolerance, and smooth scaling during events.",
+      ],
+      technologies: ["frontend", "backend", "database", "cloud", "devops", "sockets"],
+    },
+
+    {
       date: "September 2023 - Present",
       icon: <WorkIcon />,
       title: "Full Stack Developer",

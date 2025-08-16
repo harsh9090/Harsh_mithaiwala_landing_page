@@ -8,127 +8,117 @@ import { ThemeContext } from "../../Context/theme";
 
 const GetInTouch = () => {
   const [{ themename }] = React.useContext(ThemeContext);
-  const [copied, setCopied] = React.useState(false);
-  const [activeCard, setActiveCard] = React.useState(null);
+  const [copied, setCopied] = React.useState(null);
 
-  const handleCopy = (text, type) => {
-    navigator.clipboard.writeText(text);
-    setCopied(type);
-    setTimeout(() => setCopied(null), 2000);
+  const handleCopy = async (text, type) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(type);
+      setTimeout(() => setCopied(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
   };
 
+  const contactInfo = [
+    {
+      id: 'email',
+      icon: <CgMail />,
+      title: 'Email',
+      value: 'harsh.mithaiwala.hm@gmail.com',
+      copyable: true
+    },
+    {
+      id: 'phone',
+      icon: <BsFillTelephoneFill />,
+      title: 'Phone',
+      value: '+1 (514) 581-5499',
+      copyable: true
+    },
+    {
+      id: 'location',
+      icon: <FaMapMarkerAlt />,
+      title: 'Location',
+      value: 'Canada',
+      copyable: false
+    }
+  ];
+
+  const socialLinks = [
+    {
+      name: 'LinkedIn',
+      icon: <FaLinkedin />,
+      url: 'https://www.linkedin.com/in/harsh-mithaiwala-459b6717b/'
+    },
+    {
+      name: 'GitHub',
+      icon: <VscGithub />,
+      url: 'https://github.com/harsh9090'
+    }
+  ];
+
   return (
-    <section className="contact-section section">
+    <section className="contact-section section" id="contact">
       <div className="contact-header" data-aos="fade-down">
         <h2 className="section__title">
           Get in <span className="different">Touch</span>
         </h2>
-        <div className="title-decoration">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <p className="section__subtitle">
-          Ready to turn ideas into reality? Let's create something extraordinary together!
+          Ready to collaborate? Let's discuss your project.
         </p>
       </div>
 
       <div className="contact-container">
         <div className="contact-cards">
-          <div 
-            className={`contact-card ${activeCard === 'email' ? 'active' : ''}`}
-            onMouseEnter={() => setActiveCard('email')}
-            onMouseLeave={() => setActiveCard(null)}
-            onClick={() => handleCopy("harsh.mithaiwala.hm@gmail.com", 'email')}
-            data-aos="zoom-in"
-            data-aos-delay="100"
-          >
-            <div className="card-icon">
-              <CgMail />
+          {contactInfo.map((contact, index) => (
+            <div
+              key={contact.id}
+              className={`contact-card ${copied === contact.id ? 'copied' : ''}`}
+              onClick={() => contact.copyable && handleCopy(contact.value, contact.id)}
+              data-aos="fade-up"
+              data-aos-delay={100 * index}
+            >
+              <div className="card-icon">
+                {contact.icon}
+              </div>
+              <h3>{contact.title}</h3>
+              <p className="contact-value">{contact.value}</p>
+              {contact.copyable && (
+                <span className="copy-status">
+                  {copied === contact.id ? '✓ Copied' : 'Click to copy'}
+                </span>
+              )}
             </div>
-            <h3>Email</h3>
-            <p>harsh.mithaiwala.hm@gmail.com</p>
-            <span className="copy-status">
-              {copied === 'email' ? 'Copied! ✓' : 'Click to copy'}
-            </span>
-          </div>
-
-          <div
-            className={`contact-card ${activeCard === 'phone' ? 'active' : ''}`}
-            onMouseEnter={() => setActiveCard('phone')}
-            onMouseLeave={() => setActiveCard(null)}
-            onClick={() => handleCopy("+1-(514)5815499", 'phone')}
-            data-aos="zoom-in"
-            data-aos-delay="200"
-          >
-            <div className="card-icon">
-              <BsFillTelephoneFill />
-            </div>
-            <h3>Phone</h3>
-            <p>+1-(514)5815499</p>
-            <span className="copy-status">
-              {copied === 'phone' ? 'Copied! ✓' : 'Click to copy'}
-            </span>
-          </div>
-
-          <div
-            className={`contact-card ${activeCard === 'location' ? 'active' : ''}`}
-            onMouseEnter={() => setActiveCard('location')}
-            onMouseLeave={() => setActiveCard(null)}
-            data-aos="zoom-in"
-            data-aos-delay="300"
-          >
-            <div className="card-icon">
-              <FaMapMarkerAlt />
-            </div>
-            <h3>Location</h3>
-            <span>Canada</span>
-          </div>
+          ))}
         </div>
 
         <div className="social-connect" data-aos="fade-up">
-          <h3>Connect With Me</h3>
           <div className="social-buttons">
-            <a
-              href="https://www.linkedin.com/in/harsh-mithaiwala-459b6717b/"
-              target="_blank"
-              rel="noreferrer"
-              className="social-button linkedin"
-              data-aos="zoom-in"
-              data-aos-delay="400"
-            >
-              <FaLinkedin />
-              <span>LinkedIn</span>
-            </a>
-
-            <a
-              href="https://github.com/harsh9090"
-              target="_blank"
-              rel="noreferrer"
-              className="social-button github"
-              data-aos="zoom-in"
-              data-aos-delay="500"
-            >
-              <VscGithub />
-              <span>GitHub</span>
-            </a>
-
-            <a
-              href="mailto:harsh.mithaiwala.hm@gmail.com"
-              className="social-button email"
-              data-aos="zoom-in"
-              data-aos-delay="600"
-            >
-              <CgMail />
-              <span>Email Me</span>
-            </a>
+            {socialLinks.map((social, index) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noreferrer"
+                className="social-button"
+                data-aos="fade-up"
+                data-aos-delay={200 + (index * 100)}
+              >
+                <div className="social-icon">
+                  {social.icon}
+                </div>
+                <span>{social.name}</span>
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="contact-cta" data-aos="fade-up" data-aos-delay="700">
-          <p>Have a project in mind? Let's discuss your ideas!</p>
-          <a href="mailto:harsh.mithaiwala.hm@gmail.com" className="cta-button">
-            Start a Conversation
+        <div className="contact-cta" data-aos="fade-up">
+          <a 
+            href="mailto:harsh.mithaiwala.hm@gmail.com?subject=Project%20Discussion" 
+            className="cta-button"
+          >
+            Start a Project
           </a>
         </div>
       </div>
